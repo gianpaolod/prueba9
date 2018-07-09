@@ -1,0 +1,58 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+     <%= link_to image_tag("cdlogsmini.jpeg", alt: "Brand"), root_path, :class=>'navbar-brand no-padding' %>
+       </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+         <%= link_to "RMAI", rmai_index_path, :class => 'nav-item nav-link' %>
+         <%= link_to "SmartLogs", smartlogs_index_path, :class => 'nav-item nav-link' %>
+
+      <% if user_signed_in? %>
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link'  %>
+        <%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
+      <% end %>
+      </p>
+</div>
+
+<!-- dropdown que no funciona
+   <div class="dropdown">
+       <% if user_signed_in? %>
+       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <%= current_user.email %>
+       </button>
+       <ul class="dropdown-menu" role="menu">
+       <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'dropdown-item' %> </li>
+        <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %> </li>
+    </ul>
+              <% else %>
+       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Account
+       </button>
+       <%= link_to "Sign up", new_user_registration_path, :class => 'dropdown-item'  %>
+       <%= link_to "Login", new_user_session_path, :class => 'dropdown-item'  %>
+       <% end %> -->
+</div>
+
+
+      <!-- autenticacion de usuario
+      <% if user_signed_in? %>
+      <li class="nav-item nav-link disabled"> <%= current_user.email %> </li>
+      <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-item nav-link' %>  </li>
+      <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-item nav-link'  %> </li>
+      <% else %>
+      <li> <%= link_to "Sign up", new_user_registration_path, :class => 'nav-item nav-link'  %>  </li>
+      <li> <%= link_to "Login", new_user_session_path, :class => 'nav-item nav-link'  %> </li>
+      <% end %>-->
+
+ </div>
+
+    </div>
+  </div>
+</nav>
